@@ -74,7 +74,7 @@ export class UsersController {
     this.sendResponse(res, HttpStatus.CREATED, user);
   }
 
-  private putUser(res: http.ServerResponse, uuid: string, user: User) {
+  private putUser(res: http.ServerResponse, uuid: string, user: User): void {
     if (!this.validateUUID(uuid)) {
       this.sendResponse(res, HttpStatus.BAD_REQUEST, 'Not a valid UUID');
       return;
