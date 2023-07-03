@@ -5,9 +5,10 @@ export class App {
   private server = this.createServer();
   private usersModule = new UsersModule();
   private usersController = this.usersModule.usersController;
+  private defaultPort = 4000;
 
   constructor() {
-    this.listen(Number(process.env.PORT));
+    this.listen(Number(process.env.PORT ?? this.defaultPort));
   }
 
   private createServer() {
